@@ -11,10 +11,12 @@ public class Orden extends Thread {
     public ArrayList<Productos> listaproductos = new ArrayList();
     boolean avanzar;
     public JTable tabla;
-    public Orden orden2 = new Orden();
+ // public Orden orden2 = new Orden();
 
-    public Orden() {
+    public  Orden() {
     }
+
+    
 
     public Orden(Cajeros c, Clientes cl) {
         this.cajeros = c;
@@ -66,11 +68,14 @@ public class Orden extends Thread {
     public String toString() {
         return "Orden{" + "cajeros=" + cajeros + ", clientes=" + clientes + ", listaproductos=" + listaproductos + '}';
     }
-
+    
+    
     public void run(Orden orden2,JTable tabla) throws InterruptedException {
 
         while (true) {
             if (avanzar) {
+                DefaultTableModel modelp = (DefaultTableModel) cajeros.getListaatributo().jt_Hilo.getModel();
+                
                 for (int i = 0; i < orden2.getListaproductos().size(); i++) {
 
                     Object[] newrow = {
@@ -79,7 +84,9 @@ public class Orden extends Thread {
                         orden2.getListaproductos().get(i).getTiempot()};
                     int tiempo = orden2.getListaproductos().get(i).getTiempot();
                     Thread.sleep(tiempo);
-                    DefaultTableModel modelo = (DefaultTableModel)tabla.getModel();
+                    modelp.addRow(newrow);
+                     cajeros.getListaatributo().jt_Hilo.setModel(modelp);
+                    
                 }
 
             }

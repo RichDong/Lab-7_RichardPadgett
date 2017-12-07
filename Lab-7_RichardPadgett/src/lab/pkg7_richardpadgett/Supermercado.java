@@ -21,6 +21,8 @@ public class Supermercado extends javax.swing.JFrame {
      */
     public Supermercado() {
         initComponents();
+        Orden n = new Orden();
+        
     }
 
     /**
@@ -326,6 +328,9 @@ public class Supermercado extends javax.swing.JFrame {
             }
         }
         JOptionPane.showMessageDialog(this, "Compra realizada");
+        Orden n = new Orden();
+        n.start();
+       
         //c.getOrd().setCajeros((Cajeros) cb_cajeros.getSelectedItem());
 
 
