@@ -8,6 +8,7 @@ public class Cajeros {
     String nombre;
     int id;
     ArrayList <Orden> ordenes = new ArrayList();
+    Lista listaatributo = new Lista();
 
     public Cajeros() {
     }
@@ -16,6 +17,16 @@ public class Cajeros {
         this.nombre = nombre;
         this.id = id;
     }
+
+    public Lista getListaatributo() {
+        return listaatributo;
+    }
+
+    public void setListaatributo(Lista listaatributo) {
+        this.listaatributo = listaatributo;
+    }
+
+    
     
 
     public String getNombre() {
@@ -46,5 +57,6 @@ public class Cajeros {
     public String toString() {
         return  nombre;
     }
+    
     
 }

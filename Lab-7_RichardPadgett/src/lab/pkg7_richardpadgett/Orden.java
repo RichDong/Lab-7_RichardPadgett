@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 
 public class Orden {
-    Cajeros c;
-    Clientes cl;
-    ArrayList<Productos> listaproductos = new ArrayList();
+   public  Cajeros c;
+   public  Clientes cl;
+   public  ArrayList<Productos> listaproductos = new ArrayList();
 
     public Orden() {
     }

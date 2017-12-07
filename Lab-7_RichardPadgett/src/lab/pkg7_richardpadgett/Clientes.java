@@ -1,11 +1,10 @@
-
 package lab.pkg7_richardpadgett;
 
-
 public class Clientes {
-    String nombre;
-    int edad;
-    Orden ord;
+
+    public String nombre;
+    public int edad;
+    public Orden ord;
 
     public Clientes() {
     }
@@ -44,5 +43,5 @@ public class Clientes {
     public String toString() {
         return "Clientes{" + "nombre=" + nombre + ", edad=" + edad + ", ord=" + ord + '}';
     }
-    
+
 }

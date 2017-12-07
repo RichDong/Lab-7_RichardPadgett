@@ -7,6 +7,7 @@ package lab.pkg7_richardpadgett;
 
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,13 +32,6 @@ public class Supermercado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jd_lista = new javax.swing.JDialog();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        tf_prcesando = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -56,77 +50,15 @@ public class Supermercado extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         tf_nombrecliente = new javax.swing.JTextField();
-        tf_orden = new javax.swing.JButton();
+        jb_orden = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         cb_Productos = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        jb_agregaralaorden = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         cb_cajeros = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
+        jb_compra = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         tf_edad = new javax.swing.JTextField();
-
-        jLabel6.setText("jLabel6");
-
-        jLabel7.setText("jLabel7");
-
-        jLabel8.setText("Procesando");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Producto", "Cliente", "Tiempo"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
-        javax.swing.GroupLayout jd_listaLayout = new javax.swing.GroupLayout(jd_lista.getContentPane());
-        jd_lista.getContentPane().setLayout(jd_listaLayout);
-        jd_listaLayout.setHorizontalGroup(
-            jd_listaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_listaLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addGap(70, 70, 70))
-            .addGroup(jd_listaLayout.createSequentialGroup()
-                .addGroup(jd_listaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_listaLayout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
-                        .addComponent(tf_prcesando, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jd_listaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        jd_listaLayout.setVerticalGroup(
-            jd_listaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_listaLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(jd_listaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
-                .addGap(27, 27, 27)
-                .addGroup(jd_listaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(tf_prcesando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -237,15 +169,35 @@ public class Supermercado extends javax.swing.JFrame {
 
         jLabel9.setText("Nombre Cliente");
 
-        tf_orden.setText("Ordenar");
+        jb_orden.setText("Ordenar");
+        jb_orden.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_ordenMouseClicked(evt);
+            }
+        });
+        jb_orden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_ordenActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("Produtos");
 
-        jButton1.setText("Agregar a Orden");
+        jb_agregaralaorden.setText("Agregar a Orden");
+        jb_agregaralaorden.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_agregaralaordenMouseClicked(evt);
+            }
+        });
 
         jLabel11.setText("Cajero");
 
-        jButton2.setText("Realizar Compra");
+        jb_compra.setText("Realizar Compra");
+        jb_compra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_compraMouseClicked(evt);
+            }
+        });
 
         jLabel12.setText("Edad");
 
@@ -263,7 +215,7 @@ public class Supermercado extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(cb_Productos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(27, 27, 27)
-                                .addComponent(jButton1)
+                                .addComponent(jb_agregaralaorden)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel11)
                                 .addGap(18, 18, 18)
@@ -277,10 +229,10 @@ public class Supermercado extends javax.swing.JFrame {
                                     .addComponent(tf_nombrecliente)
                                     .addComponent(tf_edad, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
                                 .addGap(45, 45, 45)
-                                .addComponent(tf_orden))))
+                                .addComponent(jb_orden))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(174, 174, 174)
-                        .addComponent(jButton2)))
+                        .addComponent(jb_compra)))
                 .addContainerGap(117, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -290,7 +242,7 @@ public class Supermercado extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(tf_nombrecliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_orden))
+                    .addComponent(jb_orden))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
@@ -299,11 +251,11 @@ public class Supermercado extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(cb_Productos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
+                    .addComponent(jb_agregaralaorden)
                     .addComponent(jLabel11)
                     .addComponent(cb_cajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
-                .addComponent(jButton2)
+                .addComponent(jb_compra)
                 .addContainerGap(126, Short.MAX_VALUE))
         );
 
@@ -334,12 +286,17 @@ public class Supermercado extends javax.swing.JFrame {
         modelo.addElement(new Cajeros(tf_nombrecajero.getText(), Integer.parseInt(tf_id.getText())));
         cb_cajeros.setModel(modelo);
         JOptionPane.showMessageDialog(this, "Cajero Creado Exitosamente");
-        jd_lista.setModal(true);
-        jd_lista.pack();
-        jd_lista.setLocationRelativeTo(this);
-        jd_lista.setVisible(true);
+        Lista lista = new Lista();
+        tf_nombrecajero.setText("");
+        tf_id.setText("");
 
-        
+        lista.pack();
+        lista.setLocationRelativeTo(this);
+        lista.setVisible(true);
+        lista.getJl_nombrecajero().setText(cb_cajeros.getSelectedItem().toString());
+        listas.add(lista);
+        labels.add(lista.getJl_nombrecajero());
+
 
     }//GEN-LAST:event_jb_crearCajeroMouseClicked
 
@@ -348,9 +305,50 @@ public class Supermercado extends javax.swing.JFrame {
         DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Productos.getModel();
         modelo2.addElement(new Productos(tf_nombreproducto.getText(), Integer.parseInt(tf_precio.getText()), Integer.parseInt(tf_tiempo.getText())));
         cb_Productos.setModel(modelo2);
-        JOptionPane.showMessageDialog(this, "PRoducto Creado Exitosamente");
+        JOptionPane.showMessageDialog(this, "Producto Creado Exitosamente");
+        tf_nombreproducto.setText("");
+        tf_precio.setText("");
 
     }//GEN-LAST:event_jb_crearproductoMouseClicked
+
+    private void jb_ordenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_ordenActionPerformed
+
+        
+        
+        
+        
+
+    }//GEN-LAST:event_jb_ordenActionPerformed
+
+    private void jb_compraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_compraMouseClicked
+        for (int i = 0; i < listacajeros.size(); i++) {
+            if (cb_cajeros.equals(listacajeros.get(i))) {
+               
+                
+            }
+        }
+
+      
+
+
+    }//GEN-LAST:event_jb_compraMouseClicked
+
+    private void jb_ordenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ordenMouseClicked
+        c = new Clientes(tf_nombrecliente.getText(), Integer.parseInt(tf_edad.getText()),new Orden());
+        c.getO
+        
+        JOptionPane.showMessageDialog(this, "Cliente Creado Exitosamente");
+
+    }//GEN-LAST:event_jb_ordenMouseClicked
+
+    private void jb_agregaralaordenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregaralaordenMouseClicked
+      
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jb_agregaralaordenMouseClicked
 
     /**
      * @param args the command line arguments
@@ -390,8 +388,6 @@ public class Supermercado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cb_Productos;
     private javax.swing.JComboBox<String> cb_cajeros;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -400,30 +396,29 @@ public class Supermercado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JButton jb_agregaralaorden;
+    private javax.swing.JButton jb_compra;
     private javax.swing.JButton jb_crearCajero;
     private javax.swing.JButton jb_crearproducto;
-    private javax.swing.JDialog jd_lista;
+    private javax.swing.JButton jb_orden;
     private javax.swing.JTextField tf_edad;
     private javax.swing.JTextField tf_id;
     private javax.swing.JTextField tf_nombrecajero;
     private javax.swing.JTextField tf_nombrecliente;
     private javax.swing.JTextField tf_nombreproducto;
-    private javax.swing.JButton tf_orden;
-    private javax.swing.JTextField tf_prcesando;
     private javax.swing.JTextField tf_precio;
     private javax.swing.JTextField tf_tiempo;
     // End of variables declaration//GEN-END:variables
-ArrayList<Cajeros> listacajeros = new ArrayList();
-    ArrayList<Productos> productostotal = new ArrayList();
+    public ArrayList<Cajeros> listacajeros = new ArrayList();
+    public ArrayList<Productos> productostotal = new ArrayList();
+    Clientes c;
+    int cont = 0;
+    public ArrayList<Lista> listas = new ArrayList();
+    public ArrayList<JLabel> labels = new ArrayList();
 
 }
