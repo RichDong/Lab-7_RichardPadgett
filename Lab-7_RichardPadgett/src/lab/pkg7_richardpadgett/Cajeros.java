@@ -7,10 +7,16 @@ import java.util.ArrayList;
 public class Cajeros {
     String nombre;
     int id;
-    ArrayList <Productos> ordenes = new ArrayList();
+    ArrayList <Orden> ordenes = new ArrayList();
 
     public Cajeros() {
     }
+
+    public Cajeros(String nombre, int id) {
+        this.nombre = nombre;
+        this.id = id;
+    }
+    
 
     public String getNombre() {
         return nombre;
@@ -28,17 +34,17 @@ public class Cajeros {
         this.id = id;
     }
 
-    public ArrayList<Productos> getOrdenes() {
+    public ArrayList<Orden> getOrdenes() {
         return ordenes;
     }
 
-    public void setOrdenes(ArrayList<Productos> ordenes) {
+    public void setOrdenes(ArrayList<Orden> ordenes) {
         this.ordenes = ordenes;
     }
 
     @Override
     public String toString() {
-        return "Cajeros{" + "nombre=" + nombre + ", id=" + id + ", ordenes=" + ordenes + '}';
+        return  nombre;
     }
     
 }
