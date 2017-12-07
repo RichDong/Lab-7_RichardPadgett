@@ -3,9 +3,9 @@ package lab.pkg7_richardpadgett;
 
 
 public class Productos {
-    String nombre;
-    int precio;
-    int tiempot;
+    public String nombre;
+    public int precio;
+    public int tiempot;
 
     public Productos() {
     }

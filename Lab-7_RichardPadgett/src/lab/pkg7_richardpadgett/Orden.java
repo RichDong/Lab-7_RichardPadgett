@@ -4,33 +4,33 @@ package lab.pkg7_richardpadgett;
 import java.util.ArrayList;
 
 
-public class Orden {
-   public  Cajeros c;
-   public  Clientes cl;
+public class Orden extends Thread {
+   public  Cajeros cajeros;
+   public  Clientes clientes;
    public  ArrayList<Productos> listaproductos = new ArrayList();
 
     public Orden() {
     }
 
     public Orden(Cajeros c, Clientes cl) {
-        this.c = c;
-        this.cl = cl;
+        this.cajeros = c;
+        this.clientes = cl;
     }
 
-    public Cajeros getC() {
-        return c;
+    public Cajeros getCajeros() {
+        return cajeros;
     }
 
-    public void setC(Cajeros c) {
-        this.c = c;
+    public void setCajeros(Cajeros cajeros) {
+        this.cajeros = cajeros;
     }
 
-    public Clientes getCl() {
-        return cl;
+    public Clientes getClientes() {
+        return clientes;
     }
 
-    public void setCl(Clientes cl) {
-        this.cl = cl;
+    public void setClientes(Clientes clientes) {
+        this.clientes = clientes;
     }
 
     public ArrayList<Productos> getListaproductos() {
@@ -43,7 +43,9 @@ public class Orden {
 
     @Override
     public String toString() {
-        return "Orden{" + "c=" + c + ", cl=" + cl + ", listaproductos=" + listaproductos + '}';
+        return "Orden{" + "cajeros=" + cajeros + ", clientes=" + clientes + ", listaproductos=" + listaproductos + '}';
     }
+
+    
     
 }

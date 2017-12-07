@@ -141,10 +141,10 @@ public class Lista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel jl_nombrecajero;
-    private javax.swing.JLabel jl_nombrecliente;
+    public javax.swing.JLabel jl_nombrecajero;
+    public javax.swing.JLabel jl_nombrecliente;
     public javax.swing.JTable jt_Hilo;
-    private javax.swing.JTextField tf_procesando;
+    public javax.swing.JTextField tf_procesando;
     // End of variables declaration//GEN-END:variables
 
     public JLabel getJl_nombrecajero() {

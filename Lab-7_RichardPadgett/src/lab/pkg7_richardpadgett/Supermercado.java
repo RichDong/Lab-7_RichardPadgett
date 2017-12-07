@@ -287,15 +287,17 @@ public class Supermercado extends javax.swing.JFrame {
         cb_cajeros.setModel(modelo);
         JOptionPane.showMessageDialog(this, "Cajero Creado Exitosamente");
         Lista lista = new Lista();
+        lista.getJl_nombrecajero().setText(tf_nombrecajero.getText());
         tf_nombrecajero.setText("");
         tf_id.setText("");
 
         lista.pack();
         lista.setLocationRelativeTo(this);
         lista.setVisible(true);
-        lista.getJl_nombrecajero().setText(cb_cajeros.getSelectedItem().toString());
+        lista.setName(tf_nombrecajero.getText());
+       
+
         listas.add(lista);
-        labels.add(lista.getJl_nombrecajero());
 
 
     }//GEN-LAST:event_jb_crearCajeroMouseClicked
@@ -313,41 +315,34 @@ public class Supermercado extends javax.swing.JFrame {
 
     private void jb_ordenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_ordenActionPerformed
 
-        
-        
-        
-        
 
     }//GEN-LAST:event_jb_ordenActionPerformed
 
     private void jb_compraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_compraMouseClicked
-        for (int i = 0; i < listacajeros.size(); i++) {
-            if (cb_cajeros.equals(listacajeros.get(i))) {
-               
-                
+        for (int i = 0; i < listas.size(); i++) {
+            if (listas.get(i).getName().equals(((Cajeros)cb_cajeros.getSelectedItem()).getNombre()) ) {
+                listas.get(i).jl_nombrecliente.setText(c.getNombre());
             }
         }
-
-      
+        JOptionPane.showMessageDialog(this, "Compra realizada");
+        //c.getOrd().setCajeros((Cajeros) cb_cajeros.getSelectedItem());
 
 
     }//GEN-LAST:event_jb_compraMouseClicked
 
     private void jb_ordenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ordenMouseClicked
-        c = new Clientes(tf_nombrecliente.getText(), Integer.parseInt(tf_edad.getText()),new Orden());
-        c.getO
-        
+        c = new Clientes(tf_nombrecliente.getText(), Integer.parseInt(tf_edad.getText()), new Orden());
+
         JOptionPane.showMessageDialog(this, "Cliente Creado Exitosamente");
 
     }//GEN-LAST:event_jb_ordenMouseClicked
 
     private void jb_agregaralaordenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregaralaordenMouseClicked
-      
+        c.getOrd().getListaproductos().add((Productos) cb_Productos.getSelectedItem());
+        JOptionPane.showMessageDialog(this, "Objeto Agregado Exitosamente");
         
         
-        
-        
-        
+
     }//GEN-LAST:event_jb_agregaralaordenMouseClicked
 
     /**
@@ -416,8 +411,8 @@ public class Supermercado extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     public ArrayList<Cajeros> listacajeros = new ArrayList();
     public ArrayList<Productos> productostotal = new ArrayList();
-    Clientes c;
-    int cont = 0;
+    public Clientes c;
+    public int cont = 0;
     public ArrayList<Lista> listas = new ArrayList();
     public ArrayList<JLabel> labels = new ArrayList();
 

@@ -5,10 +5,10 @@ import java.util.ArrayList;
 
 
 public class Cajeros {
-    String nombre;
-    int id;
-    ArrayList <Orden> ordenes = new ArrayList();
-    Lista listaatributo = new Lista();
+    public String nombre;
+    public int id;
+    public ArrayList <Orden> ordenes = new ArrayList();
+    public Lista listaatributo = new Lista();
 
     public Cajeros() {
     }
