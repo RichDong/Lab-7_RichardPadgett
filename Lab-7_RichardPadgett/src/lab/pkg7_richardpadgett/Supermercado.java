@@ -322,6 +322,7 @@ public class Supermercado extends javax.swing.JFrame {
         for (int i = 0; i < listas.size(); i++) {
             if (listas.get(i).getName().equals(((Cajeros)cb_cajeros.getSelectedItem()).getNombre()) ) {
                 listas.get(i).jl_nombrecliente.setText(c.getNombre());
+                
             }
         }
         JOptionPane.showMessageDialog(this, "Compra realizada");
@@ -340,6 +341,7 @@ public class Supermercado extends javax.swing.JFrame {
     private void jb_agregaralaordenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregaralaordenMouseClicked
         c.getOrd().getListaproductos().add((Productos) cb_Productos.getSelectedItem());
         JOptionPane.showMessageDialog(this, "Objeto Agregado Exitosamente");
+        listaorden.add(new Orden((Cajeros) cb_cajeros.getSelectedItem(),c));
         
         
 
@@ -415,5 +417,7 @@ public class Supermercado extends javax.swing.JFrame {
     public int cont = 0;
     public ArrayList<Lista> listas = new ArrayList();
     public ArrayList<JLabel> labels = new ArrayList();
+    public Orden ordengolbal = new Orden();
+    public ArrayList <Orden> listaorden = new ArrayList();
 
 }
